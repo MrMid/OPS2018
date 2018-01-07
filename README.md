@@ -13,7 +13,9 @@ Technická dokumentace k tomuto čidlu je obsažena v tomto repozitáři [zde](D
 ## Zapojení
 Snímač jsme k Raspberry připojili pomocí GPIO podle dokumentace následujícím způsobem:
 
-![Schéma zapojení DHT11 do Raspberry Pi](DHT11_zapojeni.png)
+Schéma                                                       |Fotografie
+:-----------------------------------------------------------:|----------------------------------------------
+![Schéma zapojení DHT11 do Raspberry Pi](DHT11_zapojeni.png) | ![Fotografie zapojeného Raspberry Pi se snímačem](Raspi_zapojeni.jpg)
 
 Datová linka je připojena ke GPIO portu 4, ze kterého je vstup následně čten.
 
