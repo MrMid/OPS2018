@@ -71,6 +71,8 @@ echo ", {$row['temp']}, {$row['humidity']}],";
 echo '["'.$cas.'",'.$temp.','.$hum.']]';
 ```
 
-Výsledný graf ukazuje vývoj teploty a vlhkosti za posledních 16 hodin:
+Výsledný graf ukazuje vývoj teploty a vlhkosti za posledních 15 hodin:
 
 ![Graf vývoje hodnot](temp_graf.PNG)
+
+Raspberry je přístupné na doméně [znamenacek.eu](http://znamenacek.eu/)
