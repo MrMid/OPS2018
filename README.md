@@ -42,7 +42,7 @@ Vzhledem k nedostatkům v komunikaci se vždy nepodaří napoprvé přečíst sp
 ## CRON úloha
 Pro pravidelné čtení je opakovaně volaný zmíněný skript. K tomu je použit démon Cron s následující definicí:
 ```
-*/5 * * * * python /home/pi/app/app.py
+*/15 * * * * python /home/pi/app/app.py
 ```
 ## Databáze
 Jak již bylo zmíněno, data jsou ukládána do databáze. Tato databáze je hostována lokálně na Raspberry, a jedná se konkrétně o MySQL MariaDB databázi.
@@ -51,3 +51,26 @@ Pro přístup do databáze jsme vytvořili dva uživatelské účty, jeden výhr
 Databáze má jednoduchou strukturu, pouze jednu entitu se třemi atributy, časem čtení a naměřenou teplotou a vlhkostí.
 
 ## Webový server
+
+Na Raspberry běží Apache server, který zajišťuje spuštění PHP skriptu na získání dat z databáze a poskytuje vzdálenému prohlížeči uživatelské rozhraní obsahující graf vývoje teplot. Toto zobrazení je realizováno s pomocí knihoven jQuery a CanvasJS.
+
+Výňatek z PHP skriptu:
+```PHP
+$sql = "SELECT log_time, temp, humidity FROM log ORDER BY log_time DESC  LIMIT 0, 60";
+$result = $conn->query($sql);
+
+while ($row = $result->fetch_assoc()) {
+    echo "[";
+$cas =  $row['log_time'];
+$temp = $row['temp'];
+$hum = $row['humidity'];
+echo '"'.$cas.'"';
+echo ", {$row['temp']}, {$row['humidity']}],";
+}
+
+echo '["'.$cas.'",'.$temp.','.$hum.']]';
+```
+
+Výsledný graf ukazuje vývoj teploty a vlhkosti za posledních 16 hodin:
+
+![Graf vývoje hodnot](temp_graf.PNG)
