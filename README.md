@@ -77,4 +77,5 @@ Výsledný graf ukazuje vývoj teploty a vlhkosti za posledních 15 hodin:
 
 ![Graf vývoje hodnot](temp_graf.PNG)
 
-Raspberry je přístupné na doméně [znamenacek.eu](http://znamenacek.eu/)
+Raspberry je přístupné na doméně [znamenacek.eu](http://znamenacek.eu/).
+K dispozici je také čistý textový výstup zveřejněné části dat, dostupná jako OpenData, a to [zde](http://znamenacek.eu/dateDB.php).
