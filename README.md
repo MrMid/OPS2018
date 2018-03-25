@@ -1,6 +1,8 @@
 # Raspberry Pi: Teplotní čidlo
 Implementace domácího IoT teploměru s webovým rozhraním na Raspberry Pi
 
+test
+
 ## Cíle projektu:
 1) Nastudovat dokumentaci k vybranému teploměru
 2) Vytvořit program na pravidelné čtení hodnot
