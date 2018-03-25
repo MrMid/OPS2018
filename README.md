@@ -3,7 +3,6 @@ Implementace domácího IoT teploměru s webovým rozhraním na Raspberry Pi
 
 test
 
-test2
 
 ## Cíle projektu:
 1) Nastudovat dokumentaci k vybranému teploměru
